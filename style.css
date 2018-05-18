@@ -35,7 +35,7 @@
     margin: 0px;
     background-color: red;
 }
-.boxHolder {
+.boxInStorage {
     display: flex;
     width: 40px;
     height: 40px;
