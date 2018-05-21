@@ -44,15 +44,31 @@ function createMaze() {
                     cell.classList.add("boxStorage");
                     break;
                 case "B":
-                    cell.classList.add("box")
+                    cell.classList.add("box");
+                    break;
                 case "X":
                     cell.classList.add("boxInStorage");
+                    break;
+                default:
+                    break;
             }
         }
     }
     page.appendChild(board);
 }
 createMaze();
+function win(){
+    let ready = document.getElementsByClassName("boxInStorage");
+    //console.log(ready);
+    for (i = 0; i <ready.length;i++) {
+        if (i > 5) {
+           let wow = document.getElementById("winner");
+           console.log("win");
+            let wemadeit = document.write("Win!");
+        }
+    }
+}
+
 //
 //
 // Event listener for when keys are pressed on the keyboard
@@ -107,6 +123,7 @@ document.addEventListener('keydown', (event) => {
                     y -= 1;
                     personTop = personTop - 40;
                     document.getElementById("person").style.top = personTop + "px";
+                    win();
                     break;
                 }
                 //
@@ -176,6 +193,7 @@ document.addEventListener('keydown', (event) => {
                 y -= 1;
                 personTop = personTop - 40;
                 document.getElementById("person").style.top = personTop + "px";
+                win();
                 break;
             };
             break;
@@ -217,6 +235,7 @@ document.addEventListener('keydown', (event) => {
                 y += 1;
                 personTop = personTop + 40;
                 document.getElementById("person").style.top = personTop + "px";
+                win();
                 break;
                 }
                 let oneDown = maze[y + 1].split("");
@@ -232,6 +251,7 @@ document.addEventListener('keydown', (event) => {
                 y += 1;
                 personTop = personTop + 40;
                 document.getElementById("person").style.top = personTop + "px";
+                win();
                 break;
             };
             if (maze[y + 1][x] === "O") {
@@ -260,6 +280,7 @@ document.addEventListener('keydown', (event) => {
                 y += 1;
                 personTop = personTop + 40;
                 document.getElementById("person").style.top = personTop + "px";
+                win();
                 break;
             };
             break;
@@ -303,6 +324,7 @@ document.addEventListener('keydown', (event) => {
                     x += 1;
                     personLeft = personLeft + 40;
                     document.getElementById("person").style.left = personLeft + "px";
+                    win();
                     break;
                 }
                 let currentYArray = maze[y].split("");
@@ -315,6 +337,7 @@ document.addEventListener('keydown', (event) => {
                 x += 1;
                 personLeft = personLeft + 40;
                 document.getElementById("person").style.left = personLeft + "px";
+                win();
                 break;
             };
             if (maze[y][x + 1] === "O") {
@@ -340,6 +363,7 @@ document.addEventListener('keydown', (event) => {
                 x += 1;
                 personLeft = personLeft + 40;
                 document.getElementById("person").style.left = personLeft + "px";
+                win();
                 break;
             };
             break;
@@ -376,6 +400,7 @@ document.addEventListener('keydown', (event) => {
                     x -= 1;
                     personLeft = personLeft - 40;
                     document.getElementById("person").style.left = personLeft + "px";
+                    win();
                     break;
                 }
                 let currentYArrayLeft = maze[y].split("");
@@ -388,6 +413,7 @@ document.addEventListener('keydown', (event) => {
                 x -= 1;
                 personLeft = personLeft - 40;
                 document.getElementById("person").style.left = personLeft + "px";
+                win();
                 break;
             };
             if (maze[y][x - 1] === "S") {
@@ -413,9 +439,11 @@ document.addEventListener('keydown', (event) => {
                 x -= 1;
                 personLeft = personLeft - 40;
                 document.getElementById("person").style.left = personLeft + "px";
+                win();
                 break;
             };
             break;
     };
 })
+
 console.log(maze);

@@ -26,28 +26,28 @@
     width: 40px;
     height: 40px;
     margin: 0px;
-    background-color: black;
+    background-color: dimgray;
 }
 .boxStorage {
     display: flex;
     width: 40px;
     height: 40px;
     margin: 0px;
-    background-color: red;
+    background-color: black;
 }
 .boxInStorage {
     display: flex;
     width: 40px;
     height: 40px;
     margin: 0px;
-    background-color: green;
+    background-color: blueviolet;
 }
 .box {
     display: flex;
     width: 40px;
     height: 40px;
     margin: 0px;
-    background-color: darkgoldenrod;
+    background-color: ivory;
 }
 body {
     margin: 0;
